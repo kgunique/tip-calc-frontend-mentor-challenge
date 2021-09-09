@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+  <script src="index.js"></script>
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution {
@@ -36,21 +37,21 @@
         <h6>Bill</h6>
         <div class="inputbox">
           <img src="/images/icon-dollar.svg" alt="dollar_icon">
-          <input type="text" placeholder="Enter Bill Amount">
+          <input type="text" placeholder="Enter Bill Amount" id="billAmount">
         </div>
         <h6>Select Tip %</h6>
         <div class="buttongroup">
-          <div class="button">5%</div>
-          <div class="button">10%</div>
-          <div class="button">15%</div>
-          <div class="button">25%</div>
-          <div class="button">50%</div>
-          <div class="button"><input type="text" placeholder="Custom" /></div>
+          <div class="button" onclick="calcfive()">5%</div>
+          <div class="button" onclick="calcten()">10%</div>
+          <div class="button" onclick="calcfifteen()">15%</div>
+          <div class="button" onclick="calctwentyfive()">25%</div>
+          <div class="button" onclick="calcfifty()">50%</div>
+          <div class="button" onclick = "customcal()"><input type="text" placeholder="Custom" id="customInput" /></div>
         </div>
         <h6>Number of People</h6>
         <div class="inputbox">
           <img src="/images/icon-person.svg" alt="person_icon">
-          <input type="number" placeholder="Minimum 1" min="1">
+          <input type="number" placeholder="Minimum 1" min="1" id="noOfPeople">
         </div>
 
       </div>
@@ -60,21 +61,18 @@
             <h3>Tip Amount</h3>
             <p>/Person</p>
           </div>
-          <div class="total">$4.27</div>
+          <div class="total" id="totalTipPerPerson">0</div>
         </div>
         <div class="tip_amount">
           <div class="tip_det">
             <h3>Total</h3>
             <p>/Person</p>
           </div>
-          <div class="total">$32.79</div>
+          <div class="total" id="totalTip">0</div>
         </div>
-        <button class="reset">RESET</button>
+        <button class="reset" onclick="reset()">RESET</button>
       </div>
-
-
     </div>
-
   </div>
 
 
